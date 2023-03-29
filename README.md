@@ -34,7 +34,7 @@ Temporal modeling is crucial for multi-frame human pose estimation. Most existin
 
 ## Resources
 
-**Paper**:  under final revision
+**Paper**: [Mutual Information-Based Temporal Difference Learning for Human Pose Estimation in Video](https://arxiv.org/abs/2303.08475)
 
 **Code**: under preparation
 
