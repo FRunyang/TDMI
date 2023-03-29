@@ -44,7 +44,7 @@ Temporal modeling is crucial for multi-frame human pose estimation. Most existin
 
 ```latex
 @InProceedings{Feng_2023_CVPR,
-    author    = {Feng, Runyang and Gao, Yiixng and Ma, Xueqing and Tse, Tze Ho Elden and Chang, Hyung Jin},
+    author    = {Feng, Runyang and Gao, Yixing and Ma, Xueqing and Tse, Tze Ho Elden and Chang, Hyung Jin},
     title     = {Mutual Information-Based Temporal Difference Learning for Human Pose Estimation in Video},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
     month     = {June},
