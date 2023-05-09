@@ -1,0 +1,395 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+<head>
+	<title>s2contact ECCV 2022</title>
+	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">Mutual Information-Based Temporal Difference Learning for Human Pose Estimation in Video</span>
+		<table align=center width=600px>
+			<table align=center width=1200px>
+				<br>
+				<tr>
+					<td align=center width=200px>
+						<center>
+							<span style="font-size:24px"><a href="https://runyangfeng.netlify.app">Runyang Feng<sup>*</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=200px>
+						<center>
+							<span style="font-size:24px"><a href="https://gaoyixing.wordpress.com/">Yixing Gao<sup>*</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=160px>
+						<center>
+							<span style="font-size:24px">Xueqing Ma</span>
+						</center>
+					</td>
+					<td align=center width=160px>
+						<center>
+							<span style="font-size:24px"><a href="https://eldentse.github.io">Tze Ho Elden Tse</a></span>
+						</center>
+					</td>
+					<td align=center width=200px>
+						<center>
+							<span style="font-size:24px"><a href="https://hyungjinchang.wordpress.com/">Hyung Jin Chang</a></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<br>
+
+			<center>
+				<span style="font-size:20px">Jilin University, University of Birmingham
+					</span>
+			</center>
+
+			<center>
+				<span style="font-size:20px">CVPR 2023
+					</span>
+			</center>
+				
+			</table>
+			<br>
+			<table align=center width=250px>
+				<tr>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href='https://arxiv.org/abs/2303.08475'>[Paper]</a></span>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href='https://github.com/Pose-Group/TDMI'>[Code]</a></span><br>
+						</center>
+					</td>
+				</tr>
+			</table>
+		</table>
+	</center>
+
+	<center><h1>Motivation</h1></center>
+	<center>
+		<table align=center width=850px>
+			<br>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:750px" src="./resources/Fig2.jpg"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td>
+					Directly leveraging optical flow can be distracted by irrelevant clues such as background and
+					blur (a), and sometimes fails in scenarios with fast motion and mutual occlusion (b). Our proposed
+					framework proceeds with temporal difference encoding and useful information disentanglement to
+					capture more tailored temporal dynamics (c), yielding more robust pose estimations (d).
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<hr>
+
+	<table align=center width=850px>
+		<center><h1>Abstract</h1></center>
+		<tr>
+			<td>
+				Temporal modeling is crucial for multi-frame human pose estimation.
+				Most existing methods directly employ optical flow or deformable convolution to predict
+				full-spectrum motion fields, which might incur numerous irrelevant cues, such as a nearby person
+				or background. Without further efforts to excavate meaningful motion priors, their results are
+				sub-optimal, especially in complicated spatiotemporal interactions. On the other hand, the
+				temporal difference has the ability to encode representative motion information which can
+				potentially be valuable for pose estimation but has not been fully exploited. In this paper,
+				we present a novel multi-frame human pose estimation framework, which employs temporal
+				differences across frames to model dynamic contexts and engages mutual information objectively
+				to facilitate useful motion information disentanglement. To be specific, we design a multi-stage
+				Temporal Difference Encoder that performs incremental cascaded learning conditioned on multi-stage
+				feature difference sequences to derive informative motion representation. We further propose a
+				Representation Disentanglement module from the mutual information perspective, which can grasp
+				discriminative task-relevant motion signals by explicitly defining useful and noisy constituents
+				of the raw motion features and minimizing their mutual information. These place us to rank No.1 in
+				the Crowd Pose Estimation in Complex Events Challenge on benchmark dataset HiEve, and achieve
+				state-of-the-art performance on three benchmarks PoseTrack2017, PoseTrack2018, and PoseTrack21.
+			</td>
+		</tr>
+	</table>
+	<br>
+
+<!-- 	<hr>
+	<center><h1>Talk</h1></center>
+	<p align="center">
+		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
+	</p> -->
+
+<!-- 	<table align=center width=800px>
+		<br>
+		<tr>
+			<center>
+				<span style="font-size:28px"><a href=''>[Slides]</a>
+				</span>
+			</center>
+		</tr>
+	</table> -->
+	<hr>
+
+	<center><h1>Framework</h1></center>
+
+	<table align=center width=420px>
+		<center>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</center>
+	</table>
+	<table align=center width=400px>
+		<tr>
+			<td align=center width=600px>
+				<center>
+					<td><img class="round" style="width:950px" src="./resources/Fig1.png"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td align=center width=400px>
+					Overall pipeline of the proposed framework.
+					The goal is to detect the human pose of the key frame. Given an input sequence,
+					we first extract their visual features. Our multi-stage Temporal Difference Encoder
+					takes these features as input and outputs the motion feature. Then, the feature is
+					handed to the Representation Disentanglement module which performs useful information
+					disentanglement. Finally, the useful motion feature and the visual feature are used to
+					obtain the final pose estimation.
+				</td>
+			</tr>
+		</center>
+	</table>
+
+	<hr>
+
+	<center><h1>Qualitative Results</h1></center>
+	<center>
+		<table align=center width=850px>
+			<br>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:750px" src="./resources/Fig3.jpg"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td>
+					Visual results of our TDMI framework on benchmark datasets. Challenging scenes such as fast motion or
+					pose occlusion are involved.
+				</td>
+			</tr>
+		</table>
+	</center>
+<!-- 	<table align=center width=800px>
+		<br>
+		<tr><center>
+			<span style="font-size:28px">&nbsp;<a href='https://github.com/eldentse/collab-hand-object/'>[GitHub]</a>
+			</center>
+		</span>
+	</table> -->
+<!--	<br>-->
+<!--	<hr>-->
+<!--	<table align=center width=800px>-->
+<!--		<center><h1>Paper and Supplementary Material</h1></center>-->
+<!--		<tr>-->
+<!--			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>-->
+<!--			<td><span style="font-size:14pt">Tze Ho Elden Tse, Zhongqun Zhang, Kwang In Kim, Ales Leonardis, Feng Zheng and Hyung Jin Chang<br>-->
+<!--				<b>S<sup>2</sup>Contact: Graph-based Network for 3D Hand-Object Contact Estimation with Semi-Supervised Learning</b><br>-->
+<!--				In ECCV, 2022.<br>-->
+<!--&lt;!&ndash; 				(hosted on <a href="">ArXiv</a>)<br> &ndash;&gt;-->
+<!--				&lt;!&ndash; (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> &ndash;&gt;-->
+<!--				<span style="font-size:4pt"><a href=""><br></a>-->
+<!--				</span>-->
+<!--			</td>-->
+<!--		</tr>-->
+<!--	</table>-->
+<!--	<br>-->
+
+<!--	<table align=center width=600px>-->
+<!--		<tr>-->
+<!--&lt;!&ndash; 			<td align=cen-->
+<!--ter><span style="font-size:14pt"><center>-->
+<!--				<a href="./resources/bibtex.txt">[Bibtex]</a>-->
+<!--			</center></td> &ndash;&gt;-->
+
+<!--			<td align=center><span style="font-size:14pt"><center>-->
+<!--				<a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136610561.pdf">[Paper]</a>-->
+<!--			</center></td>-->
+
+<!--			<td align=center><span style="font-size:14pt"><center>-->
+<!--				<a href="">[Supplementary]</a>-->
+<!--			</center></td>-->
+<!--		</tr>-->
+<!--	</table>-->
+
+<!--	<hr>-->
+<!--	<br>-->
+
+	<hr>
+
+	<table align=center width=900px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center><h1>Acknowledgements</h1></center>
+					This work is supported in part by the National Natural Science Foundation of China under
+					grant No. 62203184. This work is also supported in part by the MSIT, Korea, under the
+					ITRC program (IITP-2022-2020-0-01789) (50%) and the High-Potential Individuals Global Training Program
+					(RS2022-00155054) (50%) supervised by the IITP.
+				</left>
+			</td>
+		</tr>
+	</table>
+
+<br>
+</body>
+</html>
+
